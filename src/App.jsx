@@ -14,7 +14,7 @@ const App = () => {
         shadows
         camera={{ position: [0, 2, 10], fov: 25, near: 1, far: 100 }}
       >
-        <color attach="background" args={["#ffffff"]} />
+        <color attach="background" args={["#131313"]} />
         {/* <ambientLight intensity={0.7} /> */}
         {/* <directionalLight
           position={[-10, 4, 5]}

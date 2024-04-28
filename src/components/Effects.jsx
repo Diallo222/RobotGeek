@@ -28,7 +28,7 @@ const Effects = () => {
          /> */}
         <ChromaticAberration
           blendFunction={BlendFunction.ALPHA} // blend mode
-          offset={[0.0006, 0.0006]} // color offset
+          offset={[0.0008, 0.0008]} // color offset
         />
         <Vignette eskil={false} offset={0.005} darkness={1} />
       </EffectComposer>
