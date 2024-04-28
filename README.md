@@ -1,10 +1,10 @@
 
 # Lonely Geek Robot
 
-Fun Cursor tracking three js website
+Fun Cursor tracking three js website ! click on the image for live demo
 ## 
 
-![RobotCover](https://github.com/Diallo222/RobotGeek/assets/82043049/2e83849a-52b3-4908-8ee7-f540ac46aaf2)
+[![RobotCover](https://github.com/Diallo222/RobotGeek/assets/82043049/2e83849a-52b3-4908-8ee7-f540ac46aaf2)](https://robot-geek.vercel.app/)
 
 
 ## Getting Started
