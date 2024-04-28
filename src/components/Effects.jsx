@@ -13,7 +13,7 @@ const Effects = () => {
   return (
     <>
       <EffectComposer multisampling={0} disableNormalPass={true}>
-        <Noise opacity={0.01} />
+        <Noise opacity={0.05} />
 
         {/* <Bloom
           luminanceThreshold={0.2}

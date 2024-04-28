@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useVideoTexture } from "@react-three/drei";
 import { Color } from "three";
+import { button, useControls } from "leva";
 
 const baseColor = new Color("#44ff00").multiplyScalar(1.5);
 const lowColor = new Color("#434343").multiplyScalar(1.5);
@@ -16,6 +17,21 @@ export function Model(props) {
     "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnJwZndzN2U0OGYwNmZ6bzNwY3NtNThjbTlmb2VkYzlqZ3JpMGx0YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKKH4z9OYrjWwz6/giphy.mp4"
   );
 
+  //   const { position, rotation, scale } = useControls("name", {
+  //   position: {
+  //     value: { x: -2, y: 0, z: 0 },
+  //     step: 0.01,
+  //     joystick: "invertY",
+  //   },
+  //   rotation: {
+  //     value: { x: 1.6, y: 0, z: 0 },
+  //     step: 0.01,
+  //     joystick: "invertY",
+  //   },
+  //   scale: {
+  //     value: {x:1 , y: 1}
+  //   },
+  // });
   const ref = useRef();
   const [hovered, setHovered] = useState(false);
 
@@ -79,19 +95,21 @@ export function Model(props) {
           rotation={[-1.571, -0.003, 0.004]}
           scale={[0.117, 0.561, 0.026]}
         />
-        <mesh
+        {/* <mesh
           castShadow
           receiveShadow
           position={[-0.12, 0, 0]}
-          // geometry={nodes.Screen.geometry}
-          // material={materials["Material.016"]}
-        >
-          <meshBasicMaterial
+          geometry={nodes.Screen.geometry}
+          material={materials["Material.016"]}
+       /> */}
+
+      </mesh>
+      <mesh position={[0.31, 0.75,0]} >
+      <meshBasicMaterial
             map={hovered ? angryMap : gameMap}
             toneMapped={false}
           />
-          <planeGeometry args={[1.8, 1.2]} />
-        </mesh>
+          <planeGeometry  args={[0.7, 0.6]} />
       </mesh>
       <mesh
         ref={ref}
