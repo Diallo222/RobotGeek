@@ -31,20 +31,11 @@ export const Loader = (props) => {
         </div>
         <div className=" opacity-0">{"loading ..."}</div>
       </div>
-      <div className=" border-2 border-lime-400 w-52 h-5 p-1">
-        <div
-          className="h-full bg-lime-400 transition-all duration-500"
-          style={{
-            width: `${progress}%`,
-          }}
-        ></div>
-      </div>
-        <p className="text-lime-500 text-xl text-center font-geek mt-1"
+        <p className="text-lime-400 text-lg md:text-3xl text-center font-geek mt-10"
         style={{
           opacity : progress > 2 ? 1 :0
         }}
         >
-        {"> "}
         {Math.floor(progress)}
         {"%"}
       </p>
