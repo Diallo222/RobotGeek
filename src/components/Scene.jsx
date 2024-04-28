@@ -31,7 +31,7 @@ const Scene = ({ section , light }) => {
           castShadow
         />
       <group scale={ScalingFactor} position={[0, 0, 0]}>
-     <Backdrop receiveShadow scale={[20, 5, 5]} floor={1.5} position={[0, -0.5, -2]}>
+     <Backdrop receiveShadow scale={[20, 5, 5]} floor={2} position={[0, -0.5, -2]}>
         <meshPhysicalMaterial  color="#ececec" />
       </Backdrop>
         <Model
