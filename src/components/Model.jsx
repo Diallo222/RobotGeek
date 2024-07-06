@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useVideoTexture } from "@react-three/drei";
-import { Color } from "three";
+import * as THREE from "three";
 import { button, useControls } from "leva";
 
-const baseColor = new Color("#44ff00").multiplyScalar(1.5);
-const lowColor = new Color("#434343").multiplyScalar(1.5);
-const hoverColor = new Color("#ff0101").multiplyScalar(1.5);
+const baseColor = new THREE.Color("#44ff00").multiplyScalar(1.5);
+const lowColor = new THREE.Color("#434343").multiplyScalar(1.5);
+const hoverColor = new THREE.Color("#ff0101").multiplyScalar(1.5);
 
 export function Model(props) {
   const { nodes, materials } = useGLTF("/RoboScene.glb");
@@ -35,10 +35,9 @@ export function Model(props) {
   const ref = useRef();
   const [hovered, setHovered] = useState(false);
 
-  useFrame(({ mouse, viewport }) => {
-    const x = (mouse.x * viewport.width) / 2.5;
-    const y = (mouse.y * viewport.height) / 2.5;
-    ref.current.lookAt(x, y, 1);
+  useFrame(({  mouse }) => {
+    const target = new THREE.Vector3(mouse.x, mouse.y, 1);
+    ref.current.lookAt(target);
   });
   return (
     <group {...props} dispose={null}>
