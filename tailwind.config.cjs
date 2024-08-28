@@ -20,7 +20,7 @@ module.exports = {
         xs: "450px",
       },
       fontFamily: {
-        'geek': "Geek",
+        silkscreen: ['"Silkscreen"', 'sans-serif'],
       }
     },
   },

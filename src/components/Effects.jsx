@@ -11,7 +11,7 @@ const Effects = () => {
   return (
     <>
       <EffectComposer multisampling={0} disableNormalPass={true}>
-        <Noise opacity={0.05} />
+        <Noise opacity={0.04} />
         <ChromaticAberration
           blendFunction={BlendFunction.ALPHA} // blend mode
           offset={[0.0008, 0.0008]} // color offset

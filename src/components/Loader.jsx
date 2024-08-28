@@ -6,7 +6,6 @@ export const Loader = (props) => {
   const { progress, total, loaded, item } = useProgress();
 
   useEffect(() => {
-    // console.log(progress, total, loaded, item);
     if (progress === 100) {
       setTimeout(() => {
         setStarted(true);
@@ -20,22 +19,23 @@ export const Loader = (props) => {
   flex flex-col items-center justify-center bg-zinc-950
   ${started ? "opacity-0" : "opacity-100"}`}
     >
-     <div className="text-xl md:text-5xl  font-geek text-lime-400 relative">
+      <div className="text-xl md:text-7xl font-silkscreen text-white relative">
         <div
           className="absolute left-0 top-0  overflow-hidden truncate text-clip transition-all duration-500"
           style={{
             opacity: `${progress}%`,
           }}
         >
-          {"loading ..."}
+          {"loading"}
         </div>
-        <div className=" opacity-0">{"loading ..."}</div>
+        <div className=" opacity-0">{"loading"}</div>
       </div>
-        <p className="text-lime-400 text-lg md:text-3xl text-center font-geek mt-10"
+      <p
+        className="text-white text-lg md:text-3xl text-center font-silkscreen mt-10"
         style={{
-          opacity : progress > 2 ? 1 :0
+          opacity: progress > 2 ? 1 : 0,
         }}
-        >
+      >
         {Math.floor(progress)}
         {"%"}
       </p>

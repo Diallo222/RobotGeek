@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Scene, Loader, Effects } from "./components";
-import { SoftShadows } from "@react-three/drei";
 
 const App = () => {
   const [started, setStarted] = useState(false);
@@ -12,13 +11,11 @@ const App = () => {
       <Canvas
         dpr={[1, 2]}
         shadows
-        camera={{ position: [0, 3, 10], fov: 25, near: 1, far: 100 }}
+        camera={{ position: [0, 3, 10], fov: 20, near: 1, far: 100 }}
       >
-        <color attach="background" args={["#131313"]} />
-        {/* <ambientLight intensity={0.7} /> */}
+         <color attach="background" args={["#101010"]} />
         <Suspense>{started && <Scene />}</Suspense>
-        <Effects />
-        {/* <SoftShadows size={25} samples={10} /> */}
+        {/* <Effects /> */}
       </Canvas>
     </div>
   );
