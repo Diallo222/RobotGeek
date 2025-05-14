@@ -1,24 +1,22 @@
-import {
-  EffectComposer,
-  Noise,
-  Vignette,
-  ChromaticAberration,
-} from "@react-three/postprocessing";
+import { EffectComposer } from "@react-three/postprocessing";
+import { Noise, ChromaticAberration } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 
-// You can play with those
 const Effects = () => {
   return (
-    <>
-      <EffectComposer multisampling={0} disableNormalPass={true}>
-        <Noise opacity={0.04} />
-        <ChromaticAberration
-          blendFunction={BlendFunction.ALPHA} // blend mode
-          offset={[0.0008, 0.0008]} // color offset
-        />
-        <Vignette eskil={false} offset={0.005} darkness={1} />
-      </EffectComposer>
-    </>
+    <EffectComposer multisampling={4} disableNormalPass>
+      {/* Enhanced chromatic aberration */}
+      <ChromaticAberration
+        blendFunction={BlendFunction.NORMAL}
+        offset={[0.0009, 0.0009]}
+        // radialModulation={true}
+        modulationOffset={0.15}
+      />
+
+      {/* Subtle grain */}
+      <Noise opacity={0.05} />
+    </EffectComposer>
   );
 };
+
 export default Effects;

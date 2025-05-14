@@ -13,7 +13,7 @@ const App = () => {
         shadows
         camera={{ position: [0, 3, 10], fov: 20, near: 1, far: 100 }}
       >
-         <color attach="background" args={["#101010"]} />
+        <color attach="background" args={["#101010"]} />
         <Suspense>{started && <Scene />}</Suspense>
         {/* <Effects /> */}
       </Canvas>
